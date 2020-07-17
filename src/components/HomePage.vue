@@ -9,9 +9,16 @@
 
     export default {
         name: 'HomePage',
+
         props: {
             msg: String,
         },
+
+        methods: {
+            addItem() {
+                this.$router.push({ name: 'new-item' });
+            }
+        }
     };
 </script>
 
@@ -34,7 +41,7 @@
                 </ion-item>
             </ion-list>
             <ion-fab horizontal="end" slot="fixed" vertical="bottom">
-                <ion-fab-button>
+                <ion-fab-button @click="addItem">
                     <ion-icon name="add"/>
                 </ion-fab-button>
             </ion-fab>
